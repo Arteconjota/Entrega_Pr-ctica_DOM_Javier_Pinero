@@ -1,0 +1,204 @@
+/*GENERAL*/
+@font-face {
+    font-family: "Montserrat";
+    src: url(assets/fonts/Montserrat/Montserrat-SemiBold.ttf);
+  }
+  @font-face {
+    font-family: "Hind";
+    src: url(assets/fonts/Hind/Hind-Light.ttf);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --fontFamily-title: "Montserrat";
+    --fontFamily-text: "Hind";
+    --fontSize-text: 1em;
+    --color-primero: #000000e6;
+    --color-segundo: white;
+    --color-tercero: #69cf0f;
+    --space: 30px;
+  }
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--color-primero);
+    background-image: url(assets/background-texture.png);
+    background-size: 12%;
+  }
+
+/*LOGO & HERO*/
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+}
+  .hero {
+    height: fit-content;
+    width: auto;
+    padding: calc(var(--space)/2);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--color-tercero);
+    background-image: url(assets/main-background.png);
+  }
+  .logo{
+    width: 200px;
+    height: auto;
+    margin: var(--space) auto;
+    filter: drop-shadow(0 5px 55px var(--color-segundo));
+  }
+
+  .hero > h1 {
+    font-family: var(--fontFamily-title);
+    font-size: 3em;
+    color: var(--color-segundo);
+    padding: var(--space) 0 0 0;
+    text-shadow: 1px 1px 2px var(--color-primero);
+  }
+  .hero > p {
+    font-family: var(--fontFamily-text);
+    font-size: 1.25em;
+    font-weight: 600;
+    padding: 0 0 var(--space) 0;
+  }
+
+/*MAQUETACIÓN DE LA CARTA*/
+.menu {
+    display: flex;
+    flex-direction: row;
+    width: 100VW;
+    height: auto;
+    margin-top: var(--space);
+}
+
+/*FILTER*/
+.filter {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: fit-content;
+    align-items: start;
+    padding: var(--space);
+    margin: var(--space);
+    gap: var(--space);
+    background-color: var(--color-segundo);
+    border-radius: 10px;
+}
+.titleFilter {
+    font-family: var(--fontFamily-title);
+    font-size: var(--fontSize-text);
+}
+.filter > ul {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space)/4);
+}
+.filter > ul > li {
+    display: flex;
+    gap: calc(var(--space)/2);
+}
+label, input {
+    display: flex;
+    vertical-align: middle;
+}
+label {
+    font-family: var(--fontFamily-text);
+    font-size: var(--fontSize-text);
+}
+
+#checkbox:checked {
+    accent-color: var(--color-tercero);
+  }
+
+/*ARTICULOS*/
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    height: auto;
+    margin: var(--space);
+    margin-left: - var(--space);
+    gap: var(--space);
+    justify-content: space-around;
+}
+.product{
+    width: 21vw;
+    min-width: 275px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.imgMenu{
+    width: 100%;
+    height: auto;
+    border: var(--color-tercero) 2px double;
+    border-radius: 10px;
+    margin-bottom: calc(var(--space)/2);
+}
+.imgMenu:hover {
+    filter: drop-shadow(0 0 15px var(--color-tercero));
+    z-index: 0;
+}
+.product > h2 {
+    font-family: var(--fontFamily-title);
+    font-size: var(--fontSize-text);
+    color: var(--color-tercero);
+    z-index: 1;
+}
+.product > p {
+    font-family: var(--fontFamily-text);
+    font-size: var(--fontSize-text);
+    color: var(--color-segundo);
+    z-index: 1;
+}
+
+/*FOOTER*/
+footer{
+  width: 100%;
+  height: fit-content;
+  padding: var(--space);
+  background-color: var(--color-tercero);
+  background-image: url(assets/main-background.png);
+  margin-top: calc(var(--space) * 2)
+}
+
+.textFooter{
+  font-family: var(--fontFamily-title);
+  color: var(--color-segundo);
+  text-align: center;
+}
+
+
+/*MEDIA QUERIES*/
+@media (max-width: 435px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter {
+    display: flex;
+    width: 80%;
+    height: auto;
+    align-items: start;
+  }
+
+  .articles {
+    display: flex;
+    width: 80%;
+    margin: 0;
+  }
+  .product{
+    width: 100%;
+    min-width: 275px;
+}
+}
