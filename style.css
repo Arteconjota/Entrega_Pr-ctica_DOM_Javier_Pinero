@@ -178,7 +178,7 @@ footer{
 
 
 /*MEDIA QUERIES*/
-@media (max-width: 435px) {
+@media (max-width: 550px) {
   .menu {
     display: flex;
     flex-direction: column;
